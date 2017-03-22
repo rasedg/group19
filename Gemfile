@@ -3,11 +3,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.5'
-<<<<<<< HEAD
-# Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
-=======
->>>>>>> deploy
+
 # Use Bootstrap as front end framework
 gem 'bootstrap', '~> 4.0.0.alpha6'
 # Use SCSS for stylesheets
@@ -42,10 +38,7 @@ end
 # gem 'capistrano-rails', group: :development
 
 group :development, :test do
-<<<<<<< HEAD
-=======
   # Use sqlite3 as the database for Active Record
->>>>>>> deploy
   gem 'sqlite3'
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
