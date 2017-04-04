@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Img source:</strong>
+  <%= @location.img_source %>
+</p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @location.title %>
+</p>
+
+<p>
+  <strong>Rating:</strong>
+  <%= @location.rating %>
+</p>
+
+<%= link_to 'Edit', edit_location_path(@location) %> |
+<%= link_to 'Back', locations_path %>
