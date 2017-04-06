@@ -53,9 +53,12 @@
   <div class="row">
     <div class="col-6">
       <button type="button" class="btn btn-primary">Random Location</button>
-      <button type="button" class="btn btn-success">New Location</button>
+      <%= link_to 'New Location', new_location_path, class: "btn btn-success" %>
+
     </div>
   </div>
+  
+  
   
   <!-- End of location contianer -->
 </div>
@@ -64,7 +67,7 @@
   <div class="row">
     <div class="col-6">
       <h2>Comments</h2>
-      <p>
+      <p id="text">
         Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius dolor in auctor tristique. 
         Donec sit amet libero venenatis, sollicitudin mauris et, mattis sapien. Duis justo risus, semper 
         eget ullamcorper eu, semper et diam. Nam condimentum dolor ut mi pharetra volutpat. Integer 
@@ -80,7 +83,8 @@
   
   <div class="row">
     <div class="col-6 text-right">
-      <button type="button" class="btn btn-info pull-right">Comment</button>
+      <!--<button type="button" class="btn btn-info pull-right">Comment</button>-->
+      
     </div>
   </div>
 
