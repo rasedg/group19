@@ -24,6 +24,12 @@
 
   <div class="row">
     <div class="col-6">
+      <h1>
+        <%= @location.title %>
+      </h1>
+      <h3>
+        <%= @location.img_source %>
+      </h3>
         <a href="https://www.google.com/maps/place/51.848637,+-0.55462/">
           <img src="https://maps.googleapis.com/maps/api/staticmap?center=51.848637,+-0.55462&zoom=17&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true" alt="Google Map of 51.848637, -0.55462"></a>
     </div>
@@ -31,7 +37,7 @@
   
   <div class="row">
     <div class="col-6">
-      <span>Star Rating 1-5</span>
+      <span>Star Rating <%= @location.rating %></span>
     </div>
   </div>
 
@@ -62,34 +68,52 @@
   
   <!-- End of location contianer -->
 </div>
+
+
+
+
+
   
 <div class="container" id="comments">
   <div class="row">
     <div class="col-6">
       <h2>Comments</h2>
-      <p id="text">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Proin varius dolor in auctor tristique. 
-        Donec sit amet libero venenatis, sollicitudin mauris et, mattis sapien. Duis justo risus, semper 
-        eget ullamcorper eu, semper et diam. Nam condimentum dolor ut mi pharetra volutpat. Integer 
-        fermentum posuere auctor. In rutrum accumsan dui non sodales. Mauris posuere faucibus ipsum, 
-        at fringilla dui dignissim ut. Curabitur egestas elementum rutrum. Quisque feugiat mi non lacus 
-        volutpat, ac feugiat turpis consequat. Quisque eu nisi malesuada, auctor ipsum ac, tempor risus. 
-        Duis viverra porta lacus, ac mattis erat feugiat eu. Duis nec metus nisi. Vestibulum mattis non 
-        metus sed hendrerit.
-      </p>
-    </div>
-    
-  </div>
-  
-  <div class="row">
-    <div class="col-6 text-right">
-      <!--<button type="button" class="btn btn-info pull-right">Comment</button>-->
+      <% @location.comments.each do |comment| %>
+        <p>
+          <strong>Commenter: </strong>
+          <%= comment.commenter %>
+        </p>
+        
+        <p>
+          <strong>Comment:</strong>
+          <%= comment.body %>
+        </p>
+      <% end %>
       
+      <h2>Add a comment: </h2>
+      <%= form_for([@location, @location.comments.build]) do |f| %>
+        <p>
+          <%= f.label :commenter  %><br>
+          <%= f.text_field :commenter %>
+        </p>
+        
+        <p>
+          <%= f.label :body  %><br>
+          <%= f.text_field :body %>
+        </p>
+        
+        <p>
+          
+          <%= f.submit :Submit, class: 'btn btn-info'%>
+        </p>
+      <% end %>
+        
     </div>
   </div>
+</div>
 
 <!--End of comment contianer -->
-</div>
+
 
 
 
