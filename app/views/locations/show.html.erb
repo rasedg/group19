@@ -18,6 +18,7 @@
 <h2>Comments</h2>
 <% @location.comments.each do |comment| %>
   <p>
+    <i>Posted <%= time_ago_in_words(comment.created_at) %> ago.<br></i>
     <strong>Commenter: </strong>
     <%= comment.commenter %>
   </p>
@@ -26,6 +27,10 @@
     <strong>Comment:</strong>
     <%= comment.body %>
   </p>
+  <%= link_to 'Delete Comment', 
+                        location_comment_url(@location, comment), 
+                        method: :delete,
+                        data: { confirm: 'Confirm comment deletion?' } %>
 <% end %>
 
 <h2>Add a comment: </h2>

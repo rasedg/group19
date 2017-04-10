@@ -28,6 +28,7 @@ class CommentsController < ApplicationController
     @comment = @location.comments.create(comment_params)
     redirect_to location_path(@location)
   end
+   
 
   
   # PATCH/PUT /comments/1
@@ -47,11 +48,19 @@ class CommentsController < ApplicationController
   # DELETE /comments/1
   # DELETE /comments/1.json
   def destroy
+    @location = Location.find(params[:location_id])
+    @comment = @location.comments.find(params[:id])
     @comment.destroy
-    respond_to do |format|
-      format.html { redirect_to comments_url, notice: 'Comment was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    flash[:notice] = "Comment successfully deleted!"
+    redirect_to location_path(@location)
+    
+    #Not sure if we need this anymore. - Jack
+    
+      #@comment.destroy
+        #respond_to do |format|
+        #format.html { redirect_to location_path, notice: 'Comment was successfully destroyed.' }
+        #format.json { head :no_content }
+      #end
   end
 
   private

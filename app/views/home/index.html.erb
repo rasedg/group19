@@ -1,9 +1,5 @@
-
-
-
-
+<!-- Location Container -->
 <div class="container" id="location">
-
   <div class="row">
     <div class="col-6">
       <h1>
@@ -17,12 +13,14 @@
     </div>
   </div>
   
+<!-- User Rating -->
   <div class="row">
     <div class="col-6">
       <span>Star Rating <%= @location.rating %></span>
     </div>
   </div>
 
+<!-- Lat/Long Forms -->
   <div class="row">
     <div class="col-6">
       <div class="form-group row">
@@ -38,63 +36,72 @@
     </div>
   </div>
   
+<!-- Random/New Location Buttons -->
   <div class="row">
     <div class="col-6">
       <button type="button" class="btn btn-primary">Random Location</button>
       <%= link_to 'New Location', new_location_path, class: "btn btn-success" %>
-
     </div>
   </div>
-  
-  
-  
-  <!-- End of location contianer -->
+
+<!-- End of location contianer -->  
 </div>
 
 
 
 
-
-  
+<!-- Comments Container -->
 <div class="container" id="comments">
   <div class="row">
     <div class="col-6">
       <h2>Comments</h2>
-      <% @location.comments.each do |comment| %>
-        <p>
-          <strong>Commenter: </strong>
-          <%= comment.commenter %>
-        </p>
-        
-        <p>
-          <strong>Comment:</strong>
-          <%= comment.body %>
-        </p>
-      <% end %>
-      
-      <h2>Add a comment: </h2>
-      <%= form_for([@location, @location.comments.build]) do |f| %>
-        <p>
-          <%= f.label :commenter  %><br>
-          <%= f.text_field :commenter %>
-        </p>
-        
-        <p>
-          <%= f.label :body  %><br>
-          <%= f.text_field :body %>
-        </p>
-        
-        <p>
+        <% @location.comments.each do |comment| %>
+          <p>
+            <strong>Commenter: </strong>
+              <%= comment.commenter %>
+                <i>
+                  <!-- Comment Timestamp -->
+                  <span style="color:gray; font-size:12px"> - <%= time_ago_in_words(comment.created_at) %> ago.</span>
+                </i>
+          </p>
+            
+          <p>
+            <strong>Comment:</strong>
+              <%= comment.body %>
           
-          <%= f.submit :Submit, class: 'btn btn-info'%>
-        </p>
-      <% end %>
+              <!-- Delete Comment Button -->
+              <%= button_to 'Delete Comment', location_comment_url(@location, comment), method: :delete, data: { confirm: 'confirm comment deletion?' }, :class => "btn btn-danger btn-sm" %> 
+          </p>
+        <% end %>
+        
+      <!-- Comment Submission Form -->
+      <h2>Add a comment: </h2>
+        <%= form_for([@location, @location.comments.build]) do |f| %>
+          
+          <p>
+            <%= f.label :commenter  %><br>
+            <%= f.text_field :commenter %>
+          </p>
+            
+          <p>
+            <%= f.label :body  %><br>
+            <%= f.text_field :body %>
+          </p>
+            
+          <p>
+            <%= f.submit :Submit, class: 'btn btn-info'%>
+          </p>
+          
+        <% end %>
         
     </div>
   </div>
-</div>
 
 <!--End of comment contianer -->
+</div>
+
+
+
 
 
 
