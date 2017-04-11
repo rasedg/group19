@@ -10,8 +10,8 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
-   @location = Location.find(params[:id]
-   @random_location = Location.rand(1);
+   @location = Location.find(params[:id])
+   #@random_location = Location.rand(1)
   end
 
   # GET /locations/new
