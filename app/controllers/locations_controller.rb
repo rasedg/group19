@@ -10,6 +10,8 @@ class LocationsController < ApplicationController
   # GET /locations/1
   # GET /locations/1.json
   def show
+   @location = Location.find(params[:id]
+   @random_location = Location.rand(1);
   end
 
   # GET /locations/new
@@ -71,4 +73,5 @@ class LocationsController < ApplicationController
     def location_params
       params.require(:location).permit(:img_source, :title, :rating)
     end
+    
 end

@@ -4,3 +4,28 @@
 .btn {
     color: white;
 }
+
+body{
+    background-image: url("http://www.wallpapers-web.com/data/out/34/4006435-blank-world-map-wallpapers.png");
+    background-color: #white;
+    background-size: 100% 100%;
+    background-repeat: none;
+    
+}
+
+input[type=text] {
+    width: 50%;
+    padding: 12px 12px;
+    border: 2px solid #ccc;
+    background-color: #d3d3d3;
+}
+
+input[type=button], input[type=submit] {
+    background-color: #0094ff;
+    float: right;
+    border: none;
+    color: white;
+    padding: 16px 20px;
+    text-decoration: none;
+    cursor: pointer;
+}

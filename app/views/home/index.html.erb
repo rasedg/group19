@@ -55,24 +55,30 @@
   <div class="row">
     <div class="col-6">
       <h2>Comments</h2>
-        <% @location.comments.each do |comment| %>
-          <p>
-            <strong>Commenter: </strong>
-              <%= comment.commenter %>
-                <i>
-                  <!-- Comment Timestamp -->
-                  <span style="color:gray; font-size:12px"> - <%= time_ago_in_words(comment.created_at) %> ago.</span>
-                </i>
-          </p>
-            
-          <p>
-            <strong>Comment:</strong>
-              <%= comment.body %>
-          
-              <!-- Delete Comment Button -->
-              <%= button_to 'Delete Comment', location_comment_url(@location, comment), method: :delete, data: { confirm: 'confirm comment deletion?' }, :class => "btn btn-danger btn-sm" %> 
-          </p>
-        <% end %>
+        <div id="wrapper">
+          <div class="scrollbar" id="style-default">
+            <div class="force-overflow">
+              <% @location.comments.each do |comment| %>
+                <p>
+                  <strong>Commenter: </strong>
+                    <%= comment.commenter %>
+                      <i>
+                        <!-- Comment Timestamp -->
+                        <span style="color:gray; font-size:12px"> - <%= time_ago_in_words(comment.created_at) %> ago.</span>
+                      </i>
+                </p>
+                  
+                <p>
+                  <strong>Comment:</strong>
+                    <%= comment.body %>
+                    
+                    <!-- Delete Comment Button -->
+                    <%= button_to 'Delete Comment', location_comment_url(@location, comment), method: :delete, data: { confirm: 'confirm comment deletion?' }, :class => "btn btn-danger btn-sm" %> 
+                </p>
+            </div>
+          </div>
+        </div>
+      <% end %>
         
       <!-- Comment Submission Form -->
       <h2>Add a comment: </h2>
@@ -99,12 +105,3 @@
 
 <!--End of comment contianer -->
 </div>
-
-
-
-
-
-
-
-
-
