@@ -59,11 +59,14 @@ group :production do
 end
 
 group :test do
+
+  
   gem 'byebug', platform: :mri
   gem 'cucumber'
-  gem 'cucumber-rails'
+  gem 'cucumber-rails', :require => false
   gem 'database_cleaner'
-  gem 'rspec-expectations'
+  gem 'rspec-rails'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
 end
 
 
