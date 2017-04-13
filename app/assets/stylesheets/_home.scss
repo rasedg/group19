@@ -4,10 +4,13 @@
 .btn {
     color: white;
 }
+
 body{
-    background-image: url("http://www.wallpapers-web.com/data/out/34/4006435-blank-world-map-wallpapers.png");
-    background-color: #white;
-    background-repeat: no-repeat;
+    background: url("https://lh3.googleusercontent.com/-MBG-mXTGIVg/WO6x5i5nLqI/AAAAAAAALXc/m_KFRPtJ0JEXFZdUAo4QBiQAAxPN_QGIgCL0B/w663-d-h373-p-rw/here.png") no-repeat center center fixed;
+    -webkit-background-size: cover; 
+    -moz-background-size: cover;    
+    -o-background-size: cover;    
+    background-size: cover;
 }
 
 input[type=text] {
@@ -17,24 +20,14 @@ input[type=text] {
     background-color: #d3d3d3;
 }
 
-input[type=button], input[type=submit] {
-    background-color: #0094ff;
-    float: right;
-    border: none;
-    color: white;
-    padding: 16px 20px;
-    text-decoration: none;
-    cursor: pointer;
-}
-
 .scrollbar
 {
-    margin-left: 30px;
-    float: left;
+    margin-left: 10px;
     height: 300px;
     width: 750px;
     overflow-y: scroll;
     margin-bottom: 25px;
+    background-color: hsla(190, 1%, 57%, .2);
 }
 
 .force-overflow
@@ -47,4 +40,12 @@ input[type=button], input[type=submit] {
     text-align: left;
     width: 500px;
     margin: auto;
+}
+
+#footer {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    opacity: .3;
+    padding: 10px;
 }

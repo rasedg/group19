@@ -1,11 +1,10 @@
 class HomeController < ApplicationController
   def index
     #TODO - Replace 1 with random id
-    @location = Location.find(1);
+    @location = Location.find(random);
   end
   
-  def randomId
-    @locations = Location.all
-    return rand(1..@locations.size)
+  def random
+     return Location.order("RANDOM()").first
   end
 end

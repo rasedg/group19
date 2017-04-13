@@ -4,14 +4,12 @@ class LocationsController < ApplicationController
   # GET /locations
   # GET /locations.json
   def index
-    @locations = Location.all
+    @location = Location.all
   end
 
   # GET /locations/1
   # GET /locations/1.json
-  def show
-   @location = Location.find(params[:id])
-   #@random_location = Location.rand(1)
+  def show 
   end
 
   # GET /locations/new
@@ -56,11 +54,10 @@ class LocationsController < ApplicationController
   # DELETE /locations/1
   # DELETE /locations/1.json
   def destroy
+    @location = Location.find(params[:id])
     @location.destroy
-    respond_to do |format|
-      format.html { redirect_to locations_url, notice: 'Location was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+  
+    redirect_to action: :index
   end
 
   private
@@ -73,5 +70,4 @@ class LocationsController < ApplicationController
     def location_params
       params.require(:location).permit(:img_source, :title, :rating)
     end
-    
 end

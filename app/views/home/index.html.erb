@@ -1,22 +1,22 @@
 <!-- Location Container -->
 <div class="container" id="location">
   <div class="row">
-    <div class="col-6">
-      <h1>
-        <%= @location.title %>
-      </h1>
-      <h3>
-        <%= @location.img_source %>
-      </h3>
-        <a href="https://www.google.com/maps/place/51.848637,+-0.55462/">
+    <div class="col-6" id="title">
+        <h1>
+          <%= @location.title %>
+        </h1>
+        <h3>
+          <%= @location.img_source %>
+        </h3>
+          <a href="https://www.google.com/maps/place/51.848637,+-0.55462/">
           <img src="https://maps.googleapis.com/maps/api/staticmap?center=51.848637,+-0.55462&zoom=17&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true" alt="Google Map of 51.848637, -0.55462"></a>
-    </div>
+      </div>
   </div>
   
 <!-- User Rating -->
   <div class="row">
     <div class="col-6">
-      <span>Star Rating <%= @location.rating %></span>
+      <p><span>Star Rating <%= @location.rating %></span></p>
     </div>
   </div>
 
@@ -25,12 +25,12 @@
     <div class="col-6">
       <div class="form-group row">
         <div class="col-6">
-          <input class="form-control" type="text" value="Latitude" id="example-text-input">
+          <input class="form-control" type="text" value="Latitude" id="example-text-input" style="width: 150px">
         </div>
       </div>
       <div class="form-group row">
         <div class="col-6">
-          <input class="form-control" type="text" value="Longitude" id="example-text-input">
+          <input class="form-control" type="text" value="Longitude" id="example-text-input" style="width: 150px">
         </div>
       </div>
     </div>
@@ -39,14 +39,13 @@
 <!-- Random/New Location Buttons -->
   <div class="row">
     <div class="col-6">
-      <button type="button" class="btn btn-primary">Random Location</button>
+      <%= link_to 'Random Location', root_path, class: "btn btn-primary" %>
       <%= link_to 'New Location', new_location_path, class: "btn btn-success" %>
     </div>
   </div>
 
 <!-- End of location contianer -->  
 </div>
-
 
 
 
@@ -58,7 +57,7 @@
         <div id="wrapper">
           <div class="scrollbar" id="style-default">
             <div class="force-overflow">
-              <% @location.comments.each do |comment| %>
+              <% if @location.comments.each do |comment| %>
                 <p>
                   <strong>Commenter: </strong>
                     <%= comment.commenter %>
@@ -67,20 +66,22 @@
                         <span style="color:gray; font-size:12px"> - <%= time_ago_in_words(comment.created_at) %> ago.</span>
                       </i>
                 </p>
-                  
                 <p>
                   <strong>Comment:</strong>
                     <%= comment.body %>
-                    
                     <!-- Delete Comment Button -->
                     <%= button_to 'Delete Comment', location_comment_url(@location, comment), method: :delete, data: { confirm: 'confirm comment deletion?' }, :class => "btn btn-danger btn-sm" %> 
+                  <% end.empty? %>
+                    <h5>There are no comments at the moment! Add one <a href="#comment_anchor" data-no-turbolink>below</a>!</h5>
                 </p>
+               
+                <% end %>
             </div>
           </div>
         </div>
-      <% end %>
         
       <!-- Comment Submission Form -->
+      <a id="comment_anchor">
       <h2>Add a comment: </h2>
         <%= form_for([@location, @location.comments.build]) do |f| %>
           
@@ -99,9 +100,10 @@
           </p>
           
         <% end %>
-        
-    </div>
+        </a>
   </div>
-
+</div>
 <!--End of comment contianer -->
 </div>
+
+
