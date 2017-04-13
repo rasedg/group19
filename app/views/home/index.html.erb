@@ -61,20 +61,17 @@
                 <p>
                   <strong>Commenter: </strong>
                     <%= comment.commenter %>
-                      <i>
                         <!-- Comment Timestamp -->
-                        <span style="color:gray; font-size:12px"> - <%= time_ago_in_words(comment.created_at) %> ago.</span>
-                      </i>
+                       <i><span style="color:gray; font-size:12px"> - <%= time_ago_in_words(comment.created_at) %> ago.</span></i>
                 </p>
-                <p>
+                <p>  
                   <strong>Comment:</strong>
                     <%= comment.body %>
-                    <!-- Delete Comment Button -->
-                    <%= button_to 'Delete Comment', location_comment_url(@location, comment), method: :delete, data: { confirm: 'confirm comment deletion?' }, :class => "btn btn-danger btn-sm" %> 
-                  <% end.empty? %>
-                    <h5>There are no comments at the moment! Add one <a href="#comment_anchor" data-no-turbolink>below</a>!</h5>
+                      <!-- Delete Comment Button -->
+                      <%= button_to 'Delete Comment', location_comment_url(@location, comment), method: :delete, data: { confirm: 'confirm comment deletion?' }, :class => "btn btn-danger btn-sm" %> 
+                        <% end.empty? %>
+                          <h5>Sorry, there are no comments at the moment! Add one <a href="#comment_anchor" data-no-turbolink>below</a>!</h5>
                 </p>
-               
                 <% end %>
             </div>
           </div>
@@ -82,27 +79,25 @@
         
       <!-- Comment Submission Form -->
       <a id="comment_anchor">
-      <h2>Add a comment: </h2>
-        <%= form_for([@location, @location.comments.build]) do |f| %>
-          
-          <p>
-            <%= f.label :commenter  %><br>
-            <%= f.text_field :commenter %>
-          </p>
-            
-          <p>
-            <%= f.label :body  %><br>
-            <%= f.text_field :body %>
-          </p>
-            
-          <p>
-            <%= f.submit :Submit, class: 'btn btn-info'%>
-          </p>
+      
+    <h2>Add a comment: </h2>
+      <%= form_for([@location, @location.comments.build]) do |f| %>
+        <p>
+          <%= f.label :commenter  %><br>
+          <%= f.text_field :commenter %>
+        </p>
+        <p>
+          <%= f.label :body  %><br>
+          <%= f.text_field :body %>
+        </p>
+        <p>
+          <%= f.submit :Submit, class: 'btn btn-info'%>
+        </p>
           
         <% end %>
-        </a>
+      </a>
+    </div>
   </div>
-</div>
 <!--End of comment contianer -->
 </div>
 

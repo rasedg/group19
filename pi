@@ -1,0 +1,120 @@
+[33mcommit 39e284f96fcd67afb863253a0733909c3ea6f0ca[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Tue Apr 11 20:51:36 2017 +0000
+
+    Formatted the comments into a scrollbox
+
+[33mcommit b6097e52a0b2d44c5cee40e431b2147b944069ce[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Tue Apr 11 20:31:18 2017 +0000
+
+    Edited CSS for the home page and the text boxes (Russell Rigsbee)
+
+[33mcommit fc911bf1c1f4172de23f7bc06b0b06ba611f2f84[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Mon Apr 10 20:51:49 2017 +0000
+
+    Delete comment implemented -Jack
+
+[33mcommit 0674baca9acd70aa58ae65a337250d0fe497ddb0[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Thu Apr 6 17:40:18 2017 +0000
+
+    Moved navbar to app. layout -R. Sedgwick
+
+[33mcommit 6944210c6c5e9d4bf15b206d3cb2c552ffc66d54[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Thu Apr 6 17:37:30 2017 +0000
+
+    Edit to home_controller and view -R. Sedgwick
+
+[33mcommit a25cd91bea4b55e3cc52fed59224685c77154fd8[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Thu Apr 6 17:15:32 2017 +0000
+
+    Added custom css file -Group
+
+[33mcommit 3477ff7dda3fa51a8b30fb660a46ecfaa0600ca8[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Tue Apr 4 17:49:14 2017 +0000
+
+    Create method added for comments on location view -R. Sedgwick
+
+[33mcommit 3384ea55d37a172ffd1d831ced31a3d56946551c[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Tue Apr 4 17:22:44 2017 +0000
+
+    Locations link added to navbar -Robert Sedgwick
+
+[33mcommit 9a950db892ac8222923bb4e24b3925a7ab28dc89[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Tue Apr 4 17:04:59 2017 +0000
+
+    Create Locations & Comments models
+
+[33mcommit de9d8bc06b86b81a7aa675be339c64d1c1ba3dfb[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Tue Mar 28 21:32:19 2017 +0000
+
+    Markup added for homepage -Group effort
+
+[33mcommit 8277f63c528546d462b5ee8ba783281eb1fbe56a[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Thu Mar 23 11:34:11 2017 +0000
+
+    Added 12facotor gem
+
+[33mcommit e56fc3c7e1dad527f961ecc0ae68a4b1e3e2757e[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Thu Mar 23 11:30:02 2017 +0000
+
+    fixed gemfile
+
+[33mcommit 6b5ed841e4f641b1157fba123f29e2e055f7fd29[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Wed Mar 22 21:12:59 2017 +0000
+
+    Google maps api working
+
+[33mcommit 9a3ddf3e1e242b6f48fac5fb8410ec308cdafb6f[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Wed Mar 22 19:30:11 2017 +0000
+
+    Bootstrap and Heroku installed and working!
+
+[33mcommit eb791fb06538e37f93583650fba31282825f970d[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Wed Mar 22 19:25:28 2017 +0000
+
+    Fixed gemfile conflicts
+
+[33mcommit 6a96919aa7039bbd4fc397cf95e546e427b81caa[m
+Merge: 66adda6 fc07b46
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Wed Mar 22 19:22:26 2017 +0000
+
+    Merge branch 'deploy'
+
+[33mcommit fc07b4671f615b4a63e2149c60ded22bd29650c9[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Wed Mar 22 19:21:46 2017 +0000
+
+    added pg to gemfile
+
+[33mcommit 66adda633679d1978c5ed03b10f06621fbf64e0c[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Wed Mar 22 19:13:50 2017 +0000
+
+    Undated Gemfile
+
+[33mcommit 0063c5e609821dbe59426a3a012fcf3ff8c00233[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Wed Mar 22 18:47:18 2017 +0000
+
+    Boostrap installed and working
+
+[33mcommit 81badea41f83de126e594996d9e27f39cb2031fd[m
+Author: Robert Sedgwick <rasedgwick@gmail.com>
+Date:   Wed Mar 22 16:50:25 2017 +0000
+
+    Initial Commit
