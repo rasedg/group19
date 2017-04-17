@@ -68,6 +68,12 @@ class LocationsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def location_params
-      params.require(:location).permit(:img_source, :title, :rating)
+      params.require(:location).permit(:img_source, :title, :rating, :longitude, :latitude)
     end
+    
+    def location_builder(long, lat)
+      puts long
+      return "https://maps.googleapis.com/maps/api/staticmap?center="
+    end
+    
 end

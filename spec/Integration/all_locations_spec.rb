@@ -1,5 +1,10 @@
 require 'rails_helper.rb'
 
+feature"User Views a random location on home page" do
+    scenario "User navigates to home page and see a random location" do
+        visit root_path
+    end
+end
 
 feature"User views a list of all locations" do
     scenario "User navigates to all locations page and see a list of locations" do
@@ -20,10 +25,5 @@ feature"User can create a new location" do
         visit new_location_path
     end
 end
-=begin
-feature"User Views a random location on home page" do
-    scenario "User navigates to home page and see a random location" do
-        visit "/home/index"
-    end
-end
-=end
+
+

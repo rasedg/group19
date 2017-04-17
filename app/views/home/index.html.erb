@@ -13,6 +13,27 @@
       </div>
   </div>
   
+  <div class="row">
+    <div class="col-6" id="title">
+        <h1>
+          <%= @location.title %>
+        </h1>
+        <h1>Coordinates</h1>
+        <h1>
+          <%= @location.longitude %>
+        </h1>
+        <h1>
+          <%= @location.latitude %>
+        </h1>
+        <h3>
+          "https://maps.googleapis.com/maps/api/staticmap?center=<%=@location.longitude%>, <%=@location.latitude%>&zoom=13&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true"
+        </h3>
+           <a href="https://www.google.com/maps/place/charlotte,+nc/">
+             <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@location.longitude%>, <%=@location.latitude%>&zoom=13&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true" alt="Google Map of charlotte, nc"></a>
+
+      </div>
+  </div>
+  
 <!-- User Rating -->
   <div class="row">
     <div class="col-6">
