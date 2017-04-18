@@ -36,16 +36,18 @@
   </div>
 <% end %>
 
-<div class="row">
-  <div class="col-6">
-    <iframe id="map" width="600" height="450" frameborder="0" style="border:0" 
-      src="https://www.google.com/maps/embed/v1/view?zoom=<%=@location.zoom%>
-      &center=<%=@location.longitude%>, <%=@location.latitude%>
-      &key=AIzaSyDd1D5MfjxI4rFeElwebLzssyqgkfPHpLc
-      &maptype=satellite" allowfullscreen>
-    </iframe>
+<% unless @location.longitude.blank? %>
+  <div class="row">
+    <div class="col-6">
+      <iframe id="map" width="600" height="450" frameborder="0" style="border:0" 
+        src="https://www.google.com/maps/embed/v1/view?zoom=<%=@location.zoom%>
+        &center=<%=@location.longitude%>, <%=@location.latitude%>
+        &key=AIzaSyDd1D5MfjxI4rFeElwebLzssyqgkfPHpLc
+        &maptype=satellite" allowfullscreen>
+      </iframe>
+    </div>
   </div>
-</div>
+<% end %>
 
 
 
