@@ -1,8 +1,8 @@
 require 'rails_helper.rb'
 
-feature"User Views a random location on home page" do
-    scenario "User navigates to home page and see a random location" do
-        visit root_path
+feature "User views a random location on the home page" do
+    scenario "User navigates to home page and sees a random location" do
+        expect('/').to have_content
     end
 end
 
@@ -23,7 +23,13 @@ end
 feature"User can create a new location" do
     scenario "User navigates to new location page and creates a new location" do
         visit new_location_path
+        fill_in('Longitude', :with => '32.1213')
+        fill_in('Latitude', :with => '32.1213')
+        fill_in('Title', :with => 'Test')
+        fill_in('Rating', :with => '2')
+        expect{
+            click_on('Create Location')
+        }.to change(Location, :count).by(1)
     end
 end
-
 
