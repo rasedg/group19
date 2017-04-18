@@ -20,7 +20,7 @@ feature"User can click the new locations button on all locations page" do
     end
 end
 
-feature"User can create a new location" do
+feature "User can create a new location" do
     scenario "User navigates to new location page and creates a new location" do
         visit new_location_path
         fill_in('Longitude', :with => '32.1213')
