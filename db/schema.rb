@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170417212839) do
+ActiveRecord::Schema.define(version: 20170418170652) do
 
   create_table "comments", force: :cascade do |t|
     t.string   "commenter"
@@ -30,6 +30,7 @@ ActiveRecord::Schema.define(version: 20170417212839) do
     t.datetime "updated_at",             null: false
     t.string   "longitude"
     t.string   "latitude"
+    t.integer  "zoom"
   end
 
 end

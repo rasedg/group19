@@ -27,24 +27,25 @@
     <%= f.label :rating %><br>
     <%= f.number_field :rating %>
   </div>
+  <div class="field">
+    <%= f.label :zoom %><br>
+    <%= f.number_field :zoom %>
+  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
 <% end %>
 
 <div class="row">
-  <div class="col-2">
-    <div class="input-group">
-        <span class="input-group-btn">
-            <button type="button" class="btn btn-danger btn-number" id="minus">-</button>
-        </span>
-        <input type="text" id="zoom" class="form-control input-number" value="10" min="1" max="100">
-        <span class="input-group-btn">
-            <button type="button" class="btn btn-success btn-number" id="plus">+</button>
-        </span>
-    </div>
+  <div class="col-6">
+    <iframe id="map" width="600" height="450" frameborder="0" style="border:0" 
+      src="https://www.google.com/maps/embed/v1/view?zoom=<%=@location.zoom%>
+      &center=<%=@location.longitude%>, <%=@location.latitude%>
+      &key=AIzaSyDd1D5MfjxI4rFeElwebLzssyqgkfPHpLc
+      &maptype=satellite" allowfullscreen>
+    </iframe>
   </div>
 </div>
 
-<script
+
 

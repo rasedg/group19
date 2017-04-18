@@ -25,6 +25,7 @@ $(document).ready(function(){
     if (a < 21) {
         a++;
         $zoom.val(a);
+        src = $(#'map').attr('src');
     }
     
 });
@@ -38,5 +39,7 @@ $('#minus').click(function subst() {
         $zoom.val(b);
     }
 });
+
+
     
 });

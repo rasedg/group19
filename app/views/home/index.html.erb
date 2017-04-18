@@ -3,48 +3,28 @@
 <!-- Location Container -->
 <div class="container" id="location">
   <div class="row">
+    
     <div class="col-6" id="title">
-        <h1>
-          <%= @location.title %>
-        </h1>
+      <h1>
+        <%= @location.title %>
+      </h1>
+    </div>
 
-          <a href="https://www.google.com/maps/place/51.848637,+-0.55462/">
-          <img src="https://maps.googleapis.com/maps/api/staticmap?center=51.848637,+-0.55462&zoom=17&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true" alt="Google Map of 51.848637, -0.55462"></a>
-      </div>
-  </div>
-  
-  <div class="row">
-    <div class="col-6" id="title">
-        <h1>
-          <%= @location.title %>
-        </h1>
-        <h1>Coordinates</h1>
-        <h1>
-          <%= @location.longitude %>
-        </h1>
-        <h1>
-          <%= @location.latitude %>
-        </h1>
-        <h3>
-          "https://maps.googleapis.com/maps/api/staticmap?center=<%=@location.longitude%>, <%=@location.latitude%>&zoom=13&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true"
-        </h3>
-           <a href="https://www.google.com/maps/place/charlotte,+nc/">
-             <img src="https://maps.googleapis.com/maps/api/staticmap?center=<%=@location.longitude%>, <%=@location.latitude%>&zoom=13&scale=false&size=600x300&maptype=satellite&format=png&visual_refresh=true" alt="Google Map of charlotte, nc"></a>
-
-      </div>
-  </div>
-  
     <div class="row">
-    <div class="col-6">
-      <iframe width="600" height="450" frameborder="0" style="border:0" 
-        src="https://www.google.com/maps/embed/v1/view?zoom=18
-        &center=<%=@location.longitude%>, <%=@location.latitude%>
-        &key=AIzaSyDd1D5MfjxI4rFeElwebLzssyqgkfPHpLc
-        &maptype=satellite" allowfullscreen>
-        
-      </iframe>
+      <div class="col-6">
+        <iframe width="600" height="450" frameborder="0" style="border:0" 
+          src="https://www.google.com/maps/embed/v1/view?zoom=<%=@location.zoom%>
+          &center=<%=@location.longitude%>, <%=@location.latitude%>
+          &key=AIzaSyDd1D5MfjxI4rFeElwebLzssyqgkfPHpLc
+          &maptype=satellite" allowfullscreen>
+        </iframe>
+      </div>
     </div>
   </div>
+  
+
+  
+    
   
 <!-- User Rating -->
   <div class="row">
@@ -53,22 +33,6 @@
     </div>
   </div>
 
-<!-- Lat/Long Forms -->
-  <div class="row">
-    <div class="col-6">
-      <div class="form-group row">
-        <div class="col-6">
-          <input class="form-control" type="text" value="Latitude" id="example-text-input" style="width: 150px">
-        </div>
-      </div>
-      <div class="form-group row">
-        <div class="col-6">
-          <input class="form-control" type="text" value="Longitude" id="example-text-input" style="width: 150px">
-        </div>
-      </div>
-    </div>
-  </div>
-  
 <!-- Random/New Location Buttons -->
   <div class="row">
     <div class="col-6">
