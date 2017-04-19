@@ -23,13 +23,12 @@
   </div>
   
 
-  
-    
-  
 <!-- User Rating -->
   <div class="row">
     <div class="col-6">
-      <p><span>Star Rating <%= @location.rating %></span></p>
+      <% (1..@location.rating).each do |i| %>
+        <%= image_tag '/assets/star.png', :class => "rating_star" %>
+      <% end %><br><br>
     </div>
   </div>
 

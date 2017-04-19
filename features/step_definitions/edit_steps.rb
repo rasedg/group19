@@ -1,5 +1,5 @@
 Given(/^I am on edit page$/) do
-    visit "locations/1"
+    visit edit_location_path(location)
 end
 
 Then(/^I should see a list of update fields$/) do

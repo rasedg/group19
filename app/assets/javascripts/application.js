@@ -19,27 +19,6 @@
 //= require jquery.turbolinks
 $(document).ready(function(){
     
-    $('#plus').click(function add() {
-    var $zoom = $("#zoom");
-    var a = $zoom.val();
-    if (a < 21) {
-        a++;
-        $zoom.val(a);
-        src = $(#'map').attr('src');
-    }
-    
-});
-
-
-$('#minus').click(function subst() {
-    var $zoom = $("#zoom");
-    var b = $zoom.val();
-    if (b > 1) {
-        b--;
-        $zoom.val(b);
-    }
-});
-
 
     
 });

@@ -1,10 +1,10 @@
 class LocationsController < ApplicationController
   before_action :set_location, only: [:show, :edit, :update, :destroy]
-
+  helper_method :sort_column, :sort_direction
   # GET /locations
   # GET /locations.json
   def index
-    @location = Location.all
+    @location = Location.order(sort_column + ' ' + sort_direction)
   end
 
   # GET /locations/1
@@ -74,6 +74,14 @@ class LocationsController < ApplicationController
     def location_builder(long, lat)
       puts long
       return "https://maps.googleapis.com/maps/api/staticmap?center="
+    end
+    
+    def sort_column
+      Location.column_names.include?(params[:sort]) ? params[:sort] : "title"
+    end
+    
+    def sort_direction
+      %w[asc desc].include?(params[:direction]) ? params[:direction] : "asc"
     end
     
 end

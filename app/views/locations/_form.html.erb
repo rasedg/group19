@@ -13,23 +13,23 @@
 
   <div class="field">
     <%= f.label :longitude %><br>
-    <%= f.text_field :longitude %>
+    <%= f.text_field :longitude, :required =>"true" %>
   </div>
     <div class="field">
     <%= f.label :latitude %><br>
-    <%= f.text_field :latitude %>
+    <%= f.text_field :latitude, :required =>"true" %>
   </div>
   <div class="field">
     <%= f.label :title %><br>
-    <%= f.text_field :title %>
+    <%= f.text_field :title, :required =>"true" %>
   </div>
   <div class="field">
     <%= f.label :rating %><br>
-    <%= f.number_field :rating %>
+    <%= f.number_field :rating, :required =>"true" %>
   </div>
   <div class="field">
-    <%= f.label :zoom %><br>
-    <%= f.number_field :zoom %>
+    <%= f.label :zoom%><br>
+    <%= f.number_field :zoom, :required =>"true" %>
   </div>
   <div class="actions">
     <%= f.submit %>

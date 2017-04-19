@@ -53,3 +53,28 @@ input[type=text] {
 #navbaricon{
     
 }
+
+.rating_star{
+    width: 20px;
+    height: 20px;
+    display: block;
+    float: left;
+}
+
+.on{
+    background-position: 0 16px;
+}
+
+.pretty th .current {
+    padding-right: 25px;
+    background-repeat: no-repeat;
+    background-position: right center;
+}
+
+.pretty th .asc {
+    background-image: url('/assets/up_arrow.png');
+}
+
+.pretty th .desc {
+    background-image: url('/assets/down_arrow.png');
+}
