@@ -1,6 +1,10 @@
 // Place all the styles related to the Home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+#navcolor{
+    background-color: hsla(190, 1%, 57%, .15);
+}
+
 .btn {
     color: white;
 }
@@ -24,7 +28,7 @@ input[type=text] {
 {
     margin-left: 10px;
     height: 300px;
-    width: 750px;
+    width: 600px;
     overflow-y: scroll;
     margin-bottom: 25px;
     background-color: hsla(190, 1%, 57%, .2);
@@ -32,7 +36,7 @@ input[type=text] {
 
 .force-overflow
 {
-    min-height: 450px;
+    min-height: 200px;
 }
 
 #wrapper
@@ -54,6 +58,15 @@ input[type=text] {
     
 }
 
+.add-comment{
+    display: inline-block;
+    width: 150px;
+    height: 75px;
+    margin: 10px;
+}
+
+/*Rating Stars*/
+
 .rating_star{
     width: 20px;
     height: 20px;
@@ -64,6 +77,9 @@ input[type=text] {
 .on{
     background-position: 0 16px;
 }
+
+
+/*Listing Locations Table*/
 
 .pretty th .current {
     padding-right: 25px;
@@ -77,4 +93,37 @@ input[type=text] {
 
 .pretty th .desc {
     background-image: url('/assets/down_arrow.png');
+}
+
+.table-striped > tbody > tr:nth-child(2n+1) > td, .table-striped > tbody > tr:nth-child(2n+1) > th {
+    background-color: hsla(0, 0%, 49%, 0.20);
+}
+
+.thead-bg {
+    background-color: hsla(0, 0%, 38%, 0.39);
+    color: #383838;
+}
+
+.table-hover tbody tr:hover td, .table-hover tbody tr:hover th {
+  background-color: hsla(15, 100%, 66%, 0.13);
+}
+
+.table-bordered > thead > tr > th, .table-bordered > thead > tr > td{
+    border: 0.1px solid #9b9b9b;
+}
+
+.table-bordered > tbody > tr > th,
+.table-bordered > tfoot > tr > th,
+.table-bordered > tbody > tr > td,
+.table-bordered > tfoot > tr > td {
+   border: 0.1px solid #c1c1c1;
+}
+
+.alignment{
+   text-align: center;   
+}
+
+/*Container for buttons located at the bottom of some views*/
+.bbcontainer{
+    padding-bottom: 50px;
 }

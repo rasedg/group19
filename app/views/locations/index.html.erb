@@ -1,34 +1,37 @@
-<div class="col-6">
-  <p id="notice"><%= notice %></p>
-    <h1>Listing Locations</h1>
-      <table class="pretty">
-        <thead>
-          <tr>
-            <th>Longitude</th>
-            <th>Latitude</th>
-            <th><%= sortable "title" %></th>
-            <th><%= sortable "rating" %></th>
-            <th colspan="3"></th>
-          </tr>
-        </thead>
-        <tbody>
-          <% @location.each do |location| %>
+<div class="container">
+  <div class="col-10">
+    <p id="notice"><%= notice %></p>
+      <h1>Listing Locations</h1>
+        <table class="table pretty table-bordered table-striped table-hover">
+          <thead class="thead-bg">
             <tr>
-              <td><%= location.longitude %></td>
-              <td><%= location.latitude %></td>
-              <td><%= location.title %></td>
-              <td>
-                <% (1..location.rating).each do |i| %>
-                  <%= image_tag '/assets/star.png', :class => "rating_star" %>
-                <% end %>
-              </td>
-              <td><%= link_to 'Show', location %></td>
-              <td><%= link_to 'Edit', edit_location_path(location) %></td>
-              <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Delete location?' } %></td>
+              <th class="alignment" scope="row">Location ID</th>
+              <th class="alignment">Longitude</th>
+              <th class="alignment">Latitude</th>
+              <th class="header-text"><%= sortable "title" %></th>
+              <th class="alignment header-text"><%= sortable "rating" %></th>
+              <th class="alignment" colspan="3">Options</th>
             </tr>
-          <% end %>
-        </tbody>
-      </table>
-    <br>
-  <%= link_to 'New Location', new_location_path, class: "new_location", class: "btn btn-primary" %>
+          </thead>
+          <tbody>
+            <% @location.each do |location| %>
+              <tr>
+                <td align=center><%= location.id %></td>
+                <td><%= location.longitude %></td>
+                <td><%= location.latitude %></td>
+                <td><%= location.title %></td>
+                <td>
+                  <% (1..location.rating).each do |i| %>
+                    <%= image_tag '/assets/star.png', :class => "rating_star" %>
+                  <% end %>
+                </td>
+                <td><%= link_to 'Show', location %></td>
+                <td><%= link_to 'Edit', edit_location_path(location) %></td>
+                <td><%= link_to 'Destroy', location, method: :delete, data: { confirm: 'Delete location?' } %></td>
+              </tr>
+            <% end %>
+          </tbody>
+        </table>
+    <%= link_to 'New Location', new_location_path, class: "new_location", class: "btn btn-primary" %>
+  </div>
 </div>

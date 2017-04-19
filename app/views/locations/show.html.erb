@@ -1,19 +1,18 @@
+<div class="container">
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Longitude & Latitude:</strong>
-  <%= @location.longitude %>, <%= @location.latitude %>
-</p>
-
-<p>
+<!-- Location information -->
+<h3>
   <strong>Title:</strong>
   <%= @location.title %>
-</p>
+</h3>
 
-<p>
-  <strong>Rating:</strong>
-  <%= @location.rating %>
-</p>
+<h5>
+  <strong>Longitude & Latitude:</strong>
+  <%= @location.longitude %>, <%= @location.latitude %>
+</h5>
+
+<!-- Location google maps iframe -->
 <div class="row">
   <div class="col-6">
     <iframe id="map" width="600" height="450" frameborder="0" style="border:0" 
@@ -26,42 +25,61 @@
 </div>
 
 
-<h2>Comments</h2>
-<% @location.comments.each do |comment| %>
-  <p>
-    <i>Posted <%= time_ago_in_words(comment.created_at) %> ago.<br></i>
-    <strong>Commenter: </strong>
-    <%= comment.commenter %>
-  </p>
-  
-  <p>
-    <strong>Comment:</strong>
-    <%= comment.body %>
-  </p>
-  <%= link_to 'Delete Comment', 
-                        location_comment_url(@location, comment), 
-                        method: :delete,
-                        data: { confirm: 'Confirm comment deletion?' } %>
+<!-- User Rating -->
+<div class="row container">
+<% (1..@location.rating).each do |i| %>
+<%= image_tag '/assets/star.png', :class => "rating_star" %>
 <% end %>
+</div>
 
 
-<h2>Add a comment: </h2>
-<%= form_for([@location, @location.comments.build]) do |f| %>
-  <p>
-    <%= f.label :commenter  %><br>
-    <%= f.text_field :commenter %>
-  </p>
-  
-  <p>
-    <%= f.label :body  %><br>
-    <%= f.text_field :body %>
-  </p>
-  
-  <p>
-    <%= f.submit %>
-  </p>
-<% end %>
-  
-
-<%= link_to 'Edit', edit_location_path(@location) %> |
-<%= link_to 'Back', locations_path %>
+<!-- Comments Container -->
+<br>
+<div id="comments">
+  <div class="row">
+    <div class="col-6">
+      <h2>Comments</h2>
+        <div id="wrapper">
+          <div class="scrollbar" id="style-default">
+            <div class="force-overflow">
+              <% if @location.comments.each do |comment| %>
+                <p>
+                  <strong>Commenter: </strong>
+                    <%= comment.commenter %>
+                        <!-- Comment Timestamp -->
+                       <i><span style="color:gray; font-size:12px"> - <%= time_ago_in_words(comment.created_at) %> ago.</span></i>
+                </p>
+                <p>  
+                  <strong>Comment:</strong>
+                    <%= comment.body %>
+                      <!-- Delete Comment Button -->
+                      <%= button_to 'Delete Comment', location_comment_url(@location, comment), method: :delete, data: { confirm: 'confirm comment deletion?' }, :class => "btn btn-danger btn-sm" %> 
+                      <% end.empty? %>
+                    <h5>Sorry, there are no comments at the moment! Add one <a href="#comment_anchor" data-no-turbolink>below</a>!</h5>
+                </p>
+              <% end %>
+            </div>
+          </div>
+        </div>
+      <!-- Comment Submission Form -->
+      <h2>Add a comment: </h2>
+        <div class="container">
+          <%= form_for([@location, @location.comments.build]) do |f| %>
+            <p>
+              <%= f.label :commenter  %><br>
+              <%= f.text_field :commenter %>
+            </p>  
+            <p>
+            <%= f.label :body  %><br>
+            <%= f.text_field :body %>
+            </p>
+            <p>
+            <%= f.submit %>
+            </p>
+          <% end %>
+        </div>
+      <div class="bbcontainer">
+        <%= link_to 'Edit', edit_location_path(@location), class:"btn btn-primary btn-sm" %> |
+        <%= link_to 'Back', locations_path, class:"btn btn-danger btn-sm"%>
+      </div>
+</div>
