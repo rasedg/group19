@@ -1,5 +1,5 @@
 Given(/^I am on the homepage$/) do
-  visit home_index_path
+  visit 'home#index'
 end
 
 Then(/^I should be on the "([^"]*)" page$/) do |arg1|

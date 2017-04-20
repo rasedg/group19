@@ -15,9 +15,9 @@ end
 
 feature"User can click the new locations button on all locations page" do
     scenario "User navigates to all locations page and can click new locations button" do
-       # visit locations_path
-      #  find(".new_location").click
-    end
+       visit locations_path
+       click_on('New Location')
+   end
 end
 
 feature "User can create a new location" do
@@ -28,7 +28,7 @@ feature "User can create a new location" do
         fill_in('Title', :with => 'Test')
         fill_in('Rating', :with => '2')
         expect{
-            click_on('Create Location')
+            click_on('Submit')
         }.to change(Location, :count).by(1)
     end
 end
