@@ -1,7 +1,6 @@
 <!-- Location Container -->
 <div class="container" id="location">
   <div class="row">
-    
     <div class="col-6" id="title">
       <h1>
         <%= @location.title %>
@@ -39,7 +38,6 @@
       <%= link_to 'New Location', new_location_path, class: "btn btn-success" %>
     </div>
   </div>
-
 <!-- End of location contianer -->  
 </div>
 
@@ -48,7 +46,7 @@
 <!-- Comments Container -->
 <div class="container" id="comments">
   <div class="row">
-    <div class="col-18">
+    <div class="col-6">
       <h2>Comments</h2>
         <div id="wrapper">
           <div class="scrollbar" id="style-default">
@@ -71,7 +69,7 @@
                 <% end %>
             </div>
           </div>
-        
+        </div>
         
       <!-- Comment Submission Form -->
     
@@ -93,7 +91,6 @@
             <% end %>
           </a>
         </div>
-      </div>
     </div>
   </div>
 <!--End of comment contianer -->
