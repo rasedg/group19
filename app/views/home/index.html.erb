@@ -1,11 +1,20 @@
 <!-- Location Container -->
 <div class="container" id="location">
   <div class="row">
-    <div class="col-6" id="title">
+    <div class="col-4" id="title">
       <h1>
         <%= @location.title %>
       </h1>
     </div>
+    
+    <!-- Random/New Location Buttons -->
+  <div class="row">
+    <div class="col-12" style="margin-top:6px">
+      <%= link_to 'Random Location', root_path, class: "btn btn-primary" %>
+      <button class="new-location" style="vertical-align:middle" onclick="window.location.href='/locations/new'"><span>+ </span></a></button>
+    </div>
+  </div>
+<!-- End of location contianer -->
 
   <div class="container">
     <div class="row">
@@ -31,14 +40,6 @@
     </div>
   </div>
 
-<!-- Random/New Location Buttons -->
-  <div class="row">
-    <div class="col-6">
-      <%= link_to 'Random Location', root_path, class: "btn btn-primary" %>
-      <%= link_to 'New Location', new_location_path, class: "btn btn-success" %>
-    </div>
-  </div>
-<!-- End of location contianer -->  
 </div>
 
 
@@ -64,7 +65,7 @@
                       <!-- Delete Comment Button -->
                       <%= button_to 'Delete Comment', location_comment_url(@location, comment), method: :delete, data: { confirm: 'confirm comment deletion?' }, :class => "btn btn-danger btn-sm" %> 
                         <% end.empty? %>
-                          <h5>Sorry, there are no comments at the moment!</h5>
+                          <h5>Sorry, there are no comments at the moment! Add one below!</h5>
                 </p>
                 <% end %>
             </div>
@@ -89,7 +90,6 @@
             </p>
               
             <% end %>
-          </a>
         </div>
     </div>
   </div>

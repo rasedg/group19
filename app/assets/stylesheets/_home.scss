@@ -9,8 +9,59 @@
     color: white;
 }
 
+.button {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #dd5100;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 15px;
+  width: 120px;
+  transition: all 0.5s;
+  cursor: pointer;
+  margin: 0px;
+}
+
+.button:hover {
+    background-color: #f47429;
+}
+
+.button span {
+  cursor: pointer;
+  display: inline-block;
+  position: relative;
+  transition: 0.5s;
+}
+
+.button span:after {
+  content: '\00bb';
+  position: absolute;
+  opacity: 0;
+  top: 0;
+  right: -10px;
+  transition: 0.5s;
+}
+
+.button:hover span {
+  padding-right: 15px;
+}
+
+.button:hover span:after {
+  opacity: 1;
+  right: 0;
+}
+
+iframe {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 10px 25px 0 rgba(0, 0, 0, 0.19);
+}
+
+.navbar {
+    box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.03), 0 6px 18px 0 rgba(0, 0, 0, 0.08);
+}
+
 body{
-    background: url("https://lh3.googleusercontent.com/-MBG-mXTGIVg/WO6x5i5nLqI/AAAAAAAALXc/m_KFRPtJ0JEXFZdUAo4QBiQAAxPN_QGIgCL0B/w663-d-h373-p-rw/here.png") no-repeat center center fixed;
+    background: url("https://lh3.googleusercontent.com/-APm0YyiqLrA/WQIMI9vmSJI/AAAAAAAALbM/RbivCQecfDMQg40cJbluwLneS1mPazmfQCL0B/w663-d-h373-p-rw/websitebackground.png") no-repeat center center fixed;
     -webkit-background-size: cover; 
     -moz-background-size: cover;    
     -o-background-size: cover;    
@@ -32,6 +83,7 @@ input[type=text] {
     overflow-y: scroll;
     margin-bottom: 25px;
     background-color: hsla(190, 1%, 57%, .2);
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.3), 0 8px 25px 0 rgba(0, 0, 0, 0.19);
 }
 
 .force-overflow
@@ -126,4 +178,62 @@ input[type=text] {
 /*Container for buttons located at the bottom of some views*/
 .bbcontainer{
     padding-bottom: 50px;
+}
+
+
+/*New location button effects*/
+.new-location {
+  display: inline-block;
+  border-radius: 4px;
+  background-color: #f4511e;
+  border: none;
+  color: #FFFFFF;
+  text-align: center;
+  font-size: 18px;
+  font-weight:bolder;
+  height: 38px;
+  padding-left: 10px;
+  padding-right: 10px;
+  width: 73px;
+  transition: all 0.3s;
+  cursor: pointer;
+  margin-top: 1px;
+}
+
+.new-location:hover{
+    font-weight: normal;    
+    font-size: 16px;
+	width: 135px;
+    height: 38px;
+    padding-left: 10px;
+}
+
+.new-location span {
+    cursor: pointer;
+    display: inline-block;
+    position: relative;
+}
+
+.new-location span:after {
+    font-weight: normal;
+    content: 'New Location';
+    position: absolute;
+    opacity: 0;
+    top: 0;
+    right: -10px;
+    font-size: 16px;
+}
+
+.new-location:hover span {
+    padding-right: 105px;
+}
+
+.new-location:hover span:after {
+    transition: 0.5s;
+    opacity: 1;
+    right: 0;
+}
+
+.new-location:focus {
+    outline: none;
 }
